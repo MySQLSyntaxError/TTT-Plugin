@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/TTT-Plugin.iml" filepath="$PROJECT_DIR$/TTT-Plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ttt-api/ttt-api.iml" filepath="$PROJECT_DIR$/ttt-api/ttt-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ttt-core/ttt-core.iml" filepath="$PROJECT_DIR$/ttt-core/ttt-core.iml" />
+    </modules>
+  </component>
+</project>
