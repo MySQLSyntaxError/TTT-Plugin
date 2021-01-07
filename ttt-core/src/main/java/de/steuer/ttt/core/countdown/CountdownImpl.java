@@ -28,10 +28,13 @@ public class CountdownImpl implements CountdownInterface {
     private long delay = 0;
     private long repeat = 20;
 
+    private boolean started = false;
+
     public CountdownImpl(TTTPlugin tttPlugin, Consumer<Boolean> consumer, int seconds, String message, String oneSecondMessage, String countdownEndedMessage) {
         this.tttPlugin = tttPlugin;
         this.consumer = consumer;
         this.seconds = seconds;
+        this.message = tttPlugin.getLocaleProviderInterface().getMessage(TTTPlugin.LOCALE, "countdowns.")
         this.message = message.replace("${PREFIX}", TTTPlugin.PREFIX);
         this.oneSecondMessage = oneSecondMessage.replace("${PREFIX}", TTTPlugin.PREFIX);
         this.countdownEndedMessage = countdownEndedMessage.replace("${PREFIX}", TTTPlugin.PREFIX);
@@ -44,6 +47,8 @@ public class CountdownImpl implements CountdownInterface {
 
     @Override
     public void run() {
+        started = true;
+
         this.taskId = Bukkit.getScheduler().scheduleSyncRepeatingTask(tttPlugin.getInstance(), () -> {
             switch (this.seconds) {
                 case 60:
@@ -80,6 +85,11 @@ public class CountdownImpl implements CountdownInterface {
     @Override
     public int getTaskId() {
         return this.taskId;
+    }
+
+    @Override
+    public boolean started() {
+        return this.started;
     }
 
     @Override

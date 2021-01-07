@@ -50,6 +50,32 @@ public class GameImpl implements GameInterface {
     }
 
     @Override
+    public void calculateRoles() {
+        int traitors = (int) Math.round(Math.log(onlinePlayers.size()) * 1.2);
+        int detectives = (int) Math.round(Math.log(onlinePlayers.size()) * 0.75);
+        int innocents = onlinePlayers.size() - traitors - detectives;
+
+        Collections.shuffle(onlinePlayers);
+
+        int counter = 0;
+
+        for(int i = 0; i < traitors; i++) {
+            alivePlayers.put(onlinePlayers.get(i).getUniqueId(), Role.TRAITOR);
+            counter++;
+        }
+
+        for(int i = 0; i < detectives; i++) {
+            alivePlayers.put(onlinePlayers.get(counter).getUniqueId(), Role.DETECTIVE);
+            counter++;
+        }
+
+        for(int i = 0; i < innocents; i++) {
+            alivePlayers.put(onlinePlayers.get(counter).getUniqueId(), Role.INNOCENT);
+            counter++;
+        }
+    }
+
+    @Override
     public void addOnlinePlayer(Player player) {
         this.onlinePlayers.add(player);
     }

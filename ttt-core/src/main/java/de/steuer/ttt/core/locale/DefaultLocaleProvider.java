@@ -1,6 +1,7 @@
 package de.steuer.ttt.core.locale;
 
 import de.steuer.ttt.api.locale.LocaleProviderInterface;
+import de.steuer.ttt.api.utils.Duo;
 import de.steuer.ttt.core.TTTPlugin;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -53,7 +54,7 @@ public class DefaultLocaleProvider implements LocaleProviderInterface {
     }
 
     @Override
-    public String getMessage(String locale, String messageId, Object... placeholders) {
+    public String getMessage(String locale, String messageId, Duo<String, Object>... duos) {
         if(this.messagesCache.containsKey(locale) && this.messagesCache.get(locale).containsKey(messageId))
             return this.messagesCache.get(locale).get(messageId);
 
@@ -77,8 +78,8 @@ public class DefaultLocaleProvider implements LocaleProviderInterface {
 
         this.messagesCache.put(locale, messagesMap);
 
-        for(int i = 0; i < placeholders.length; i++)
-            message = message.replace("${" + i + "}", "" + placeholders[i]);
+        for(int i = 0; i < duos.length; i++)
+            message = message.replace("${" + duos[i].getFirst() + "}", "" + duos[i].getSecond());
 
         return message;
     }

@@ -1,0 +1,38 @@
+# These file contains every configurable message in this plugin
+
+# You can use placeholders for showing different stuff
+
+# Placeholders for every message
+
+# ${PREFIX} | shows the plugin Prefix
+
+countdowns:
+  # Placeholders for countdowns
+
+  # ${SECONDS} | the seconds till the countdown ends
+
+  waitingForPlayersMessage: '${PREFIX} The game starts when there are &e${PLAYERS} &7more players&8.' # Only here there is ${PLAYER} placeholder possible to use
+
+  gameStartingFirstMessage: '${PREFIX} The &egame&7 starts in &e${SECONDS} seconds&8.'
+  gameStartingInOneSecondMessage: '${PREFIX} The &egame&7 starts in &eone second&8.'
+  gameStartedMessage: '${PREFIX} The &egame&7 starts now&7.'
+
+  graceEndingFirstMessage: '${PREFIX} The &egrace&7 ends in &e${SECONDS} seconds&8.'
+  graceEndingInOneSecondMessage: '${PREFIX} The &egrace&7 ends in &eone second&8.'
+  graceEndedMessage: '${PREFIX} The &egrace&7 ends now&8.'
+
+  serverStoppingFirstMessage: '${PREFIX} The &eserver&7 stops in &e${SECONDS} seconds&8.'
+  serverStoppingInOneSecondMessage: '${PREFIX} The &eserver&7 stops in &eone second&8.'
+  serverStoppedMessage: '${PREFIX} The &eserver&7 stops now.'
+
+connection:
+  # Placeholders for connections
+
+  # ${NAME} | the name of the player
+  # ${ONLINE_PLAYERS} | the current player amount
+  # ${MAX_PLAYERS} | the max players that can play the game
+
+  joinMessage: '${PREFIX} &e${NAME} &7joined the server&8. &e${ONLINE_PLAYERS}&8/&e{MAX_PLAYERS}'
+  quitMessage: '${PREFIX} &e${NAME} &7left the server&8. &e${ONLINE_PLAYERS}&8/&e{MAX_PLAYERS}'
+
+  quitMessageInGame: '' # leave this blank when you don't want to have a quit message in game

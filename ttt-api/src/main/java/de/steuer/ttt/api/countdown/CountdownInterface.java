@@ -16,6 +16,8 @@ public interface CountdownInterface {
 
     int getTaskId();
 
+    boolean started();
+
     CountdownInterface setDelay(long delay);
 
     CountdownInterface setRepeat(long repeat);

@@ -24,6 +24,12 @@ public interface GameInterface {
     void startCountdown(CountdownInterface countdownInterface);
 
     /**
+     * its for calculating the roles for every player
+     */
+
+    void calculateRoles();
+
+    /**
      * @return the players that are on the server
      */
 

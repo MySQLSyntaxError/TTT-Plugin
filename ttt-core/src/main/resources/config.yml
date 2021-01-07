@@ -1,0 +1,29 @@
+# Config for TTT plugin
+
+
+# if you change this setting to 'CUSTOM', you have to make your own class extend the 'AbstractCustomLocaleProvider' Class and set your package + class name to the 'customLocaleProviderClass' key
+
+prefix: '&cTTT &8>>&7'
+
+locale:
+  localeProviderStrategy: 'DEFAULT'
+  customLocaleProviderClass: 'your.package.name.CustomLocaleProvider'
+  locale: 'en' # You can use every shortcut you want the file for the messages just gets created
+
+storage:
+  storageStrategy: 'MYSQL' # There are multiple options ('MYSQL', 'MONGODB', 'FILE')
+  databaseCredentials:
+    mysql:
+      host: 'localhost'
+      port: 3306
+      username: 'root'
+      password: 'password'
+      database: 'ttt'
+    mongodb:
+      connectionString: '' # if you leave this blank mongodb tries to connect to your local database
+
+game:
+  maxPlayers: 12 # This is the max amount of players can play at once
+  minPlayers: 4 # This are the players that are needed for starting the countdown
+  joiningMidround: true # Turn this either to true or false - true means that its allowed to join when the game already started, so the player turns into a spectator
+

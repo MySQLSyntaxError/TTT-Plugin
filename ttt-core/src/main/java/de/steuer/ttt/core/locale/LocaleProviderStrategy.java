@@ -9,7 +9,7 @@ import de.steuer.ttt.core.TTTPluginInterface;
 public enum LocaleProviderStrategy {
 
     DEFAULT("DEFAULT", DefaultLocaleProvider.class),
-    CUSTOM("CUSTOM", BaseLocaleProvider.class);
+    CUSTOM("CUSTOM", AbstractCustomLocaleProvider.class);
 
     private final String key;
     private final Class<? extends LocaleProviderInterface> providerClass;
