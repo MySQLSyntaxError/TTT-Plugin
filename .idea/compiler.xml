@@ -13,7 +13,7 @@
     <bytecodeTargetLevel>
       <module name="ttt-api" target="8" />
       <module name="ttt-core" target="1.8" />
-      <module name="TTT-Plugin" target="1.5" />
+      <module name="TTT-Plugin" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

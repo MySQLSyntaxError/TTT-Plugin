@@ -34,7 +34,7 @@ public class CountdownImpl implements CountdownInterface {
         this.tttPlugin = tttPlugin;
         this.consumer = consumer;
         this.seconds = seconds;
-        this.message = tttPlugin.getLocaleProviderInterface().getMessage(TTTPlugin.LOCALE, "countdowns.")
+        this.message = tttPlugin.getLocaleProviderInterface().getMessage(TTTPlugin.LOCALE, "countdowns.");
         this.message = message.replace("${PREFIX}", TTTPlugin.PREFIX);
         this.oneSecondMessage = oneSecondMessage.replace("${PREFIX}", TTTPlugin.PREFIX);
         this.countdownEndedMessage = countdownEndedMessage.replace("${PREFIX}", TTTPlugin.PREFIX);
